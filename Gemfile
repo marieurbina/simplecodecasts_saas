@@ -1,28 +1,35 @@
 source 'https://rubygems.org'
 
+gem 'rails', '5.0.2'
+gem 'sqlite3', group: [:development, :test]
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
+gem 'puma', '~> 3.0'
 
-gem 'rails', '4.2.5'
-gem 'pg3'
-
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-
-gem 'coffee-rails', '~> 4.1.0'
- gem 'therubyracer', platforms: :ruby
-
+gem 'coffee-rails', '~> 4.2'
+gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'turbolinks', '~> 5'
+gem 'jbuilder', '~> 2.5'
+gem 'redis', '~> 3.0'
+gem 'bcrypt', '~> 3.1.7'
+gem 'capistrano-rails', group: :development
+gem 'devise'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'byebug', platform: :mri
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
-
-
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '~> 3.0.5'
   gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
